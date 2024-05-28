@@ -76,7 +76,7 @@ for i in range(1, num_of_folds+1):
 
     test_data = datasets.ImageFolder(TEST_PATH,
                                     transform = data_transforms['test'])
-    batch = 4
+    batch = 8
     test_loader = torch.utils.data.DataLoader(test_data, batch_size = batch,
                                         shuffle = False, num_workers = 0)
     best_model = ViT(
