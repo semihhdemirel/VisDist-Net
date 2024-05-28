@@ -55,7 +55,7 @@ for i in range(1, num_of_fold+1):
     lr_student = 0.001
     temperature = 2.0
     num_epochs = 50
-    batch = 4
+    batch = 8
 
     train_loader = torch.utils.data.DataLoader(train_data, batch_size=batch,
                                             shuffle = True, num_workers = 0)
