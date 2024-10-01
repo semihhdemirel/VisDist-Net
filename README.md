@@ -81,20 +81,20 @@ After splitting the dataset into multiple folds, the dataset structure should be
 
 ### 1. train.py
 
-**Description**: Trains the `ggeconvnet-large` and `ggeconvnet-small` models independently.
+**Description**: Trains the `mobilenetv1`, `resnet18`, `vision transformer` and `hybrid-cnn` models independently.
 
 **Usage**: 
 ```bash
-python train.py --fold-dir ./fold_dataset --model GGEConvNet_Small --fold 1 --num-epochs 100 --batch-size 16 --learning-rate 0.001 --output-dir ./ckpt --num-folds 5
+python train.py
 ```
 
 ### 2. train_knowledge_distillation.py
 
-**Description**: Trains the `ggeconvnet-small` model with adaptive knowledge distillation enabled.
+**Description**: Trains the `hybrid-cnn` model with knowledge distillation enabled.
 
 **Usage**: 
 ```bash
-python train_knowledge_distillation.py --fold-dir ./fold_dataset --teacher-model-path ./ckpt/Fold1/GGEConvNet_Large/Epoch99_GGEConvNet_Large_0.9000.pth --fold 1 --num-epochs 100 --batch-size 16 --learning-rate 0.001 --output-dir ./ckpt --num-folds 5
+python train_knowledge_distillation.py 
 ```
 
 ## Testing
@@ -107,36 +107,7 @@ The training, testing and validating data can be downloaded using the following 
 
 The checkpoints can be downloaded using the following URL: [Checkpoints](https://drive.google.com/file/d/1SppjdjHgpbh7dBBSZY_Ur5gHQaHbOGyf/view?usp=sharing)
 
-```plaintext
-├── ckpt/
-│   ├── Fold1                 
-│   │   ├── akd_ggeconvnet_small.pth/        
-│   │   ├── ggeconvnet_large.pth/       
-│   │   ├── ggeconvnet_small.pth/
-│   ├── Fold2
-│   │   ├── akd_ggeconvnet_small.pth/        
-│   │   ├── ggeconvnet_large.pth/       
-│   │   ├── ggeconvnet_small.pth/                 
-│   ├── Fold3
-│   │   ├── akd_ggeconvnet_small.pth/        
-│   │   ├── ggeconvnet_large.pth/       
-│   │   ├── ggeconvnet_small.pth/                 
-│   ├── Fold4
-│   │   ├── akd_ggeconvnet_small.pth/        
-│   │   ├── ggeconvnet_large.pth/       
-│   │   ├── ggeconvnet_small.pth/                 
-│   ├── Fold5
-│   │   ├── akd_ggeconvnet_small.pth/        
-│   │   ├── ggeconvnet_large.pth/       
-│   │   ├── ggeconvnet_small.pth/                 
-```
-
 **Usage**: 
 ```bash
-python test.py --fold-dir ./fold_dataset --fold-path ./ckpt --fold 1 --batch-size 16 --metrics --roc --cm
+python test.py 
 ```
-
-
-
-Data Link:
-https://www.kaggle.com/datasets/sriramr/fruits-fresh-and-rotten-for-classification
