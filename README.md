@@ -105,7 +105,7 @@ python train_knowledge_distillation.py
 
 The training, testing and validating data can be downloaded using the following URL: [Fold Dataset](https://drive.google.com/file/d/1KPtA88ITmXXn26jYl8xnIt-QN8ySzJt4/view?usp=sharing)
 
-The checkpoints can be downloaded using the following URL: [Checkpoints](https://drive.google.com/file/d/1SppjdjHgpbh7dBBSZY_Ur5gHQaHbOGyf/view?usp=sharing)
+The checkpoints can be downloaded using the following URL: [Checkpoints](https://drive.google.com/file/d/1WTvwA07iU5UBPPrXsp9INORrosRN14xW/view?usp=sharing)
 
 **Usage**: 
 ```bash
