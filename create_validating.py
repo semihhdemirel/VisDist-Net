@@ -3,7 +3,7 @@ import shutil
 import random
 import argparse
 
-# Function to create 'Val' folder for each fold and move %10 of images from training classNames to val classNames
+# Function to create 'Val' folder for each fold and move %20 of images from training classNames to val classNames
 def create_val_folders(dataset_path, fold_prefix='Fold'):
     for i in range(1, 6):  # Iterate over each fold
         fold_dir = os.path.join(dataset_path, f"{fold_prefix}{i}")
@@ -23,8 +23,8 @@ def create_val_folders(dataset_path, fold_prefix='Fold'):
 
             # Get list of images in the training class directory
             images = os.listdir(train_class_dir)
-            # Calculate 10% of the images
-            val_count = int(len(images) * 0.1)
+            # Calculate 20% of the images
+            val_count = int(len(images) * 0.2)
             # Randomly select images to move to val directory
             val_images = random.sample(images, val_count)
 
